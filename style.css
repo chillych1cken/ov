@@ -40,4 +40,47 @@ nav a {
     border-radius: 5px;
     background: #f9f9f9;
 }
+/* Seitliches Menü */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Anfangs ausgeblendet */
+    width: 250px;
+    height: 100%;
+    background: #2c3e50;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 20px;
+}
+
+#sidebar li {
+    margin: 15px 0;
+}
+
+#sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Menü einrutschen lassen */
+#sidebar.active {
+    left: 0;
+}
 

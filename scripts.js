@@ -7,4 +7,8 @@ window.addEventListener('scroll', () => {
         nav.style.background = 'transparent';
     }
 });
+// Seitliches Menü ein-/ausrutschen
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('sidebar').classList.toggle('active');
+});
 
