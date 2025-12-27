@@ -1,10 +1,43 @@
-#menu {
-    transition: all 0.3s ease;
-    opacity: 1;
+/* Grundlayout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
-#menu.hidden {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.produkt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.produkt {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    background: #f9f9f9;
 }
 

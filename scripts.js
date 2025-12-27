@@ -1,12 +1,10 @@
-// Menü verschwindet nach 3 Sekunden Inaktivität
-let menu = document.getElementById('menu');
-let timeout;
-
-document.addEventListener('mousemove', () => {
-    menu.classList.remove('hidden');
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-        menu.classList.add('hidden');
-    }, 3000);
+// Menü-Animation (z.B. beim Scrollen)
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.style.background = '#1a252f';
+    } else {
+        nav.style.background = 'transparent';
+    }
 });
 
