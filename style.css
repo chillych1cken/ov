@@ -83,4 +83,24 @@ nav a {
 #sidebar.active {
     left: 0;
 }
+.produkt-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    scroll-snap-align: start;
+}
+.produkt-content {
+    width: 50%;
+}
+.produkt-image {
+    width: 50%;
+}
+.cta-button {
+    background: #ff6b6b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+}
 
