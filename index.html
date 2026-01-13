@@ -5,112 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oberland Sicherheitstechnik</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic reset and scroll-snap for demo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-snap-type: y mandatory;
+            overflow-x: hidden;
+        }
+        header, .produkt-section {
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #2c3e50;
+            color: white;
+            transition: left 0.3s ease;
+            z-index: 1000;
+        }
+        #sidebar.active {
+            left: 0;
+        }
+        #menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .produkt-section {
+            flex-direction: column;
+        }
+        .produkt-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .produkt-image img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <!-- Titelpräsentation -->
+    <!-- Menu Toggle Button -->
+    <button id="menu-toggle">☰</button>
+
+    <!-- Sliding Menu -->
+    <nav id="sidebar">
+        <ul style="list-style: none; padding: 20px;">
+            <li style="margin: 15px 0;"><a href="#videoueberwachung" style="color: white; text-decoration: none;">Videoüberwachung</a></li>
+            <li style="margin: 15px 0;"><a href="#smartlock" style="color: white; text-decoration: none;">Smart Locks</a></li>
+            <li style="margin: 15px 0;"><a href="#produkte" style="color: white; text-decoration: none;">Alle Produkte</a></li>
+            <li style="margin: 15px 0;"><a href="agb.html" target="_blank" style="color: white; text-decoration: none;">AGB</a></li>
+            <li style="margin: 15px 0;"><a href="datenschutz.html" target="_blank" style="color: white; text-decoration: none;">Datenschutz</a></li>
+            <li style="margin: 15px 0;"><a href="impressum.html" target="_blank" style="color: white; text-decoration: none;">Impressum</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
     <header>
-        <h1></h1>
+        <h1>Oberland Sicherheitstechnik</h1>
         <p>Individuelle Lösungen für Ihr Zuhause</p>
     </header>
 
+    <!-- Product Section: Videoüberwachung -->
     <section class="produkt-section" id="videoueberwachung">
-    <div class="produkt-content">
-        <h2>Videoüberwachung „Big Sister“</h2>
-        <p class="nutzen">Sehen Sie live, wer vor Ihrer Tür steht – egal wo Sie sind.</p>
-        <ul>
-            <li>2 Full-HD-Kameras (innen/außen)</li>
-            <li>Push-Benachrichtigung bei Bewegung</li>
-            <li>Datenschutzkonform & rechtssicher</li>
-        </ul>
-        <a href="#kontakt" class="cta-button">Jetzt konfigurieren (599 €)</a>
-    </div>
-    <div class="produkt-image">
-        <img src="kamera-beispiel.jpg" alt="Videoüberwachung im Einsatz">
-    </div>
-</section>
+        <div class="produkt-content">
+            <h2>Videoüberwachung „Big Sister“</h2>
+            <p class="nutzen">Sehen Sie live, wer vor Ihrer Tür steht – egal wo Sie sind.</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>2 Full-HD-Kameras (innen/außen)</li>
+                <li>Push-Benachrichtigung bei Bewegung</li>
+                <li>Datenschutzkonform & rechtssicher</li>
+            </ul>
+            <a href="#kontakt" class="cta-button">Jetzt konfigurieren (599 €)</a>
+        </div>
+        <div class="produkt-image">
+            <img src="kamera-beispiel.jpg" alt="Videoüberwachung im Einsatz">
+        </div>
+    </section>
 
-
-    <!-- Intelligentes Menü (verschwindend/animiert) -->
-    <nav id="sidebar">
-    <button id="menu-toggle">☰</button>
-    <ul>
-        <li><a href="#produkte">Produkte</a></li>
-        <li><a href="#videoueberwachung">Videoüberwachung</a></li>
-        <li><a href="#smartlock">Smart Locks</a></li>
-        <li><a href="agb.html" target="_blank">AGB</a></li>
-        <li><a href="datenschutz.html" target="_blank">Datenschutz</a></li>
-        <li><a href="impressum.html" target="_blank">Impressum</a></li>
-    </ul>
-</nav>
-
-
-    <!-- Produktpräsentation (7 Produkte) -->
-    <main>
-        <section id="produkte">
-            <h2>Unsere Lösungen für ein sicheres Zuhause</h2>
-            <div class="produkt-grid">
-                <!-- Produkt 1 -->
-                <div class="produkt" style="background-color: #ff6b6b;">
-                    <h3>Videoüberwachung "Big Sister"</h3>
-                    <p>
-                    	• 2 Full-HD-Kameras (innen/außen, nach Wahl) 
-    			• Bewegungserkennung mit Push-Benachrichtigung 
-    			• Cloud-Speicherung oder lokal
-    			• App-Steuerung & Live-Stream 
-    			• Installation & Einweisung Preis: 599 € (inkl. MwSt.) </p>
-                </div>
-                <!-- Produkt 2 -->
-                <div class="produkt" style="background-color: #4ecdc4;">
-                    <h3>Smart Lock und Alarmsystem "Viper"</h3>
-                    <p>
-                    	  • Smart Lock (z. B. Nuki oder Yale) mit Fingerprint/Code 
-    		          • Tür-/Fensterkontakte (3 Stück) 
-    			  • Innen-Sirene 
-   			  • Integration in Smart-Home-Systeme (z. B. Alexa, Google Home) 
- 		          • Installation & Schulung Preis: 899 € (inkl. MwSt.)</p>
-                </div>
-                <!-- Produkt 3 -->
-                <div class="produkt" style="background-color: #45b7d1;">
-                    <h3>Sicheres Heimnetzwerk "Scutum"
-                    <p>• Router mit integriertem VPN & Firewall 
-    • Ad-Blocker & Anti-Tracking-Software 
-    • Kindersicherung & Gastnetzwerk-Einrichtung 
-    • 1 Jahr Updates & Support Preis: 399 € (inkl. MwSt.)</p>
-                </div>
-                <!-- Produkt 4 -->
-                <div class="produkt" style="background-color: #96ceb4;">
-                    <h3>Videoüberwachung „Sicherer Blick“</h3>
-                    <p>Smart, diskret, rechtssicher – für Ihr Zuhause.</p>
-                </div>
-                <!-- Produkt 5 -->
-                <div class="produkt" style="background-color: #feca57;">
-                    <h3>Notfall-Set</h3>
-                    <p>    • Sturzsensor (tragbar oder raumfest) 
-    • Notrufknopf mit GPS (für unterwegs) 
-    • Automatische Benachrichtigung an Angehörige/Rettungsdienst 
-    • Einfache Bedienung (große Tasten, Sprachsteuerung) Preis: 499 € (inkl. MwSt.)</p>
-                </div>
-                <!-- Produkt 6 -->
-                <div class="produkt" style="background-color: #ff9ff3;">
-                    <h3>Digitale Rauchmelder</h3>
-                    <p>    • Vernetzte Rauchmelder 
-    • CO-Melder für Küche/Schlafzimmer 
-    • Automatische Warnung per App 
-    • Installation & Test Preis: 299 € (inkl. MwSt.) </p>
-                </div>
-                <!-- Produkt 7 -->
-                <div class="produkt" style="background-color: #54a0ff;">
-                    <h3>Urlaubsschutz-Paket</h3>
-                    <p>    • Zeitschaltuhren für Licht/TV 
-    • Briefkasten-Überwachung (Sensor) 
-    • Social-Media-Check (keine „Abwesenheits-Posts“) 
-    • Nachbarschafts-Warnsystem (optional) Preis: 199 € (inkl. MwSt.) </p>
-                </div>
+    <!-- Product Grid Section -->
+    <section id="produkte" class="produkt-section">
+        <h2>Unsere Lösungen für ein sicheres Zuhause</h2>
+        <div class="produkt-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; padding: 1rem; max-width: 1200px; margin: 0 auto;">
+            <!-- Produkt 1 -->
+            <div class="produkt" style="border: 1px solid #ddd; padding: 1rem; border-radius: 5px; background: #f9f9f9;">
+                <h3>Videoüberwachung "Big Sister"</h3>
+                <p>
+                    • 2 Full-HD-Kameras (innen/außen, nach Wahl)<br>
+                    • Bewegungserkennung mit Push-Benachrichtigung<br>
+                    • Cloud-Speicherung oder lokal<br>
+                    • App-Steuerung & Live-Stream<br>
+                    • Installation & Einweisung Preis: 599 € (inkl. MwSt.)
+                </p>
             </div>
-        </section>
-    </main>
+            <!-- Produkt 2 -->
+            <div class="produkt" style="border: 1px solid #ddd; padding: 1rem; border-radius: 5px; background: #f9f9f9;">
+                <h3>Smart Lock und Alarmsystem "Viper"</h3>
+                <p>
+                    • Smart Lock (z. B. Nuki oder Yale) mit Fingerprint/Code<br>
+                    • Tür-/Fensterkontakte (3 Stück)<br>
+                    • Innen-Sirene<br>
+                    • Integration in Smart-Home-Systeme (z. B. Alexa, Google Home)<br>
+                    • Installation & Schulung Preis: 899 € (inkl. MwSt.)
+                </p>
+            </div>
+            <!-- Add other products similarly -->
+        </div>
+    </section>
 
     <script src="scripts.js"></script>
+    <script>
+        // Simple menu toggle for demo
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
-
